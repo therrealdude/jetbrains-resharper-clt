@@ -33,20 +33,6 @@ Param
 [string[]]$ExcludedList = $ExcludedExtensions.Split(',', [System.StringSplitOptions]::RemoveEmptyEntries)
 [string]$SolutionDirPath = ($SolutionPathList[0..$($SolutionPathList.Count - 2)] -join '\')
 [string]$JetBrainsDirPath = 'jetbrains-resharper-clt'
-    
-function New-DotSettings-File {
-    [Xml]$settingsXml = Get-Content .\$($JetBrainsDirPath)\Templates\DotSettings.xml
-    [string]$keysXml = ""
-    Foreach ($e in $ExcludedList) {
-
-        $keysXml += "<s:Boolean x:Key=""/Default/CodeInspection/ExcludedFiles/FileMasksToSkip/=_002A_002A_002E$($e)/@EntryIndexedValue"">True</s:Boolean>"
-        
-    }
-    $settingsXml.ResourceDictionary.InnerXml = $keysXml
-    $DotSettingsFileName = $SolutionPathList[$SolutionPathList.Count - 1]
-    $settingsXml.Save("$($SolutionDirPath)\$($DotSettingsFileName).DotSettings")
-
-}
 
 function Invoke-InspectCode {
     $OutputFileName = '$($OutputDirPath)resharper-inspectcode-report.xml';
@@ -75,13 +61,11 @@ function Export-InspectCode-Report {
 }
 
 function Publish-DupFinder-Analysis {
-    New-DotSettings-File 
     Invoke-DupFinder
     Export-DupFinder-Report
 }
 
 function Publish-InspectCode-Analysis {
-    New-DotSettings-File 
     Invoke-InspectCode
     Export-InspectCode-Report
 }
