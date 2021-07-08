@@ -21,7 +21,7 @@ Param
       
     [Parameter(Mandatory = $false,
         Position = 1)]
-    [string]$OutputDirPath = '..\output\',
+    [string]$OutputDirPath = '..\a\codeinspectionoutput\',
        
     [Parameter(Mandatory = $false,
         Position = 2)]
