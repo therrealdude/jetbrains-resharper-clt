@@ -27,7 +27,9 @@ Param
         Position = 2)]
     [string]$ExcludedExtensions = 'js,css'
    
-   
+   [Parameter(Mandatory = $false,
+	Position = 3)]
+   [string]$FailureSeverityLevel = 'ERROR'
 )
 [string[]]$SolutionPathList = $SolutionFilePath.Split('\', [System.StringSplitOptions]::RemoveEmptyEntries)
 [string[]]$ExcludedList = $ExcludedExtensions.Split(',', [System.StringSplitOptions]::RemoveEmptyEntries)
@@ -58,7 +60,7 @@ function Export-InspectCode-Report {
     $XmlFileName = "$($OutputDirPath)\resharper-inspectcode-report.xml";
     $HtmlFileName = "$($OutputDirPath)\resharper-inspectcode-report.html";
     $xslt.Transform("$($XmlFileName)", "$($HtmlFileName)");
-    Get-Content -Path $XmlFileName;
+    Invoke-Expression ".\jetbrains-resharper-clt-master\CodeInspectionAnalyzer\CodeInspectionAnalyzer\bin\Release\CodeInspectionAnalyzer.exe $($XmlFileName) $($FailureSeverityLevel)";
 }
 
 function Publish-DupFinder-Analysis {
@@ -69,5 +71,6 @@ function Publish-DupFinder-Analysis {
 function Publish-InspectCode-Analysis {
     Invoke-InspectCode
     Export-InspectCode-Report
+    Check-Inspection-Results
 }
 

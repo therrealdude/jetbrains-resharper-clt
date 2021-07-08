@@ -1,0 +1,7 @@
+C:\projects\jetbrains-resharper-clt\CodeInspectionAnalyzer\CodeInspectionAnalyzer\bin\Debug\CodeInspectionAnalyzer.exe.config
+C:\projects\jetbrains-resharper-clt\CodeInspectionAnalyzer\CodeInspectionAnalyzer\bin\Debug\CodeInspectionAnalyzer.exe
+C:\projects\jetbrains-resharper-clt\CodeInspectionAnalyzer\CodeInspectionAnalyzer\bin\Debug\CodeInspectionAnalyzer.pdb
+C:\projects\jetbrains-resharper-clt\CodeInspectionAnalyzer\CodeInspectionAnalyzer\obj\Debug\CodeInspectionAnalyzer.csprojAssemblyReference.cache
+C:\projects\jetbrains-resharper-clt\CodeInspectionAnalyzer\CodeInspectionAnalyzer\obj\Debug\CodeInspectionAnalyzer.csproj.CoreCompileInputs.cache
+C:\projects\jetbrains-resharper-clt\CodeInspectionAnalyzer\CodeInspectionAnalyzer\obj\Debug\CodeInspectionAnalyzer.exe
+C:\projects\jetbrains-resharper-clt\CodeInspectionAnalyzer\CodeInspectionAnalyzer\obj\Debug\CodeInspectionAnalyzer.pdb
