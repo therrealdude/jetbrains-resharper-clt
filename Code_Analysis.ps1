@@ -25,7 +25,7 @@ Param
        
     [Parameter(Mandatory = $false,
         Position = 2)]
-    [string]$ExcludedExtensions = 'js,css'
+    [string]$ExcludedExtensions = 'js,css',
    
    [Parameter(Mandatory = $false,
 	Position = 3)]
