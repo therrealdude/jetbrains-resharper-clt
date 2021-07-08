@@ -58,6 +58,7 @@ function Export-InspectCode-Report {
     $XmlFileName = "$($OutputDirPath)\resharper-inspectcode-report.xml";
     $HtmlFileName = "$($OutputDirPath)\resharper-inspectcode-report.html";
     $xslt.Transform("$($XmlFileName)", "$($HtmlFileName)");
+    Get-Content -Path $XmlFileName;
 }
 
 function Publish-DupFinder-Analysis {
