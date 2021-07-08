@@ -32,7 +32,7 @@ Param
 [string[]]$SolutionPathList = $SolutionFilePath.Split('\', [System.StringSplitOptions]::RemoveEmptyEntries)
 [string[]]$ExcludedList = $ExcludedExtensions.Split(',', [System.StringSplitOptions]::RemoveEmptyEntries)
 [string]$SolutionDirPath = ($SolutionPathList[0..$($SolutionPathList.Count - 2)] -join '\')
-[string]$JetBrainsDirPath = 'jetbrains-resharper-clt'
+[string]$JetBrainsDirPath = 'jetbrains-resharper-clt-master/jetbrains-resharper-clt'
 
 function Invoke-InspectCode {
     $OutputFileName = '$($OutputDirPath)resharper-inspectcode-report.xml';
