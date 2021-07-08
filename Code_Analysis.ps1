@@ -71,6 +71,5 @@ function Publish-DupFinder-Analysis {
 function Publish-InspectCode-Analysis {
     Invoke-InspectCode
     Export-InspectCode-Report
-    Check-Inspection-Results
 }
 
