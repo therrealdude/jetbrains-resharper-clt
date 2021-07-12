@@ -14,11 +14,16 @@ namespace CodeInspectionAnalyzer
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Evaluating the inspection report...");
+            Console.WriteLine("...");
+            Console.WriteLine("...");
+
             var filePath = args[0];
             var failureSeverityLevel = args[1]?.ToUpper();
 
             using (XmlReader reader = XmlReader.Create(filePath))
             {
+                Console.WriteLine("Reading the xml");
                 var document = XElement.Load(reader);
 
 
