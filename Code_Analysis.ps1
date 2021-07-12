@@ -60,7 +60,9 @@ function Export-InspectCode-Report {
     $XmlFileName = "$($OutputDirPath)\resharper-inspectcode-report.xml";
     $HtmlFileName = "$($OutputDirPath)\resharper-inspectcode-report.html";
     $xslt.Transform("$($XmlFileName)", "$($HtmlFileName)");
+    Get-Content $($XmlFileName);
     Invoke-Expression ".\jetbrains-resharper-clt-master\CodeInspectionAnalyzer\CodeInspectionAnalyzer\bin\Release\CodeInspectionAnalyzer.exe $($XmlFileName) $($FailureSeverityLevel)";
+    Write-Host "Finished analyzing the report.";
 }
 
 function Publish-DupFinder-Analysis {
