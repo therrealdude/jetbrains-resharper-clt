@@ -59,6 +59,7 @@ function Export-InspectCode-Report {
     $xslt.Load(".\$($JetBrainsDirPath)\Templates\inspectcode.xslt"); 
     $XmlFileName = "$($OutputDirPath)\resharper-inspectcode-report.xml";
     $HtmlFileName = "$($OutputDirPath)\resharper-inspectcode-report.html";
+    Dir -Recurse $($OutputDirPath) | Get-ChildItem;
     $xslt.Transform("$($XmlFileName)", "$($HtmlFileName)");
     Get-Content $($XmlFileName);
     .\jetbrains-resharper-clt-master\CodeInspectionAnalyzer\CodeInspectionAnalyzer\bin\Release\CodeInspectionAnalyzer.exe $($XmlFileName) $($FailureSeverityLevel);
