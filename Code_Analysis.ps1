@@ -38,7 +38,7 @@ Param
 
 function Invoke-InspectCode {
     $OutputFileName = '$($OutputDirPath)resharper-inspectcode-report.xml';
-    Invoke-Expression ".\$($JetBrainsDirPath)\InspectCode.exe $($SolutionFilePath) --o=$($OutputFileName) --profile=Globalsettings.DotSettings"
+    Invoke-Expression ".\$($JetBrainsDirPath)\InspectCode.exe $($SolutionFilePath) --o=$($OutputFileName) --profile=.\jetbrains-resharper-clt-master\Globalsettings.DotSettings"
 }
 
 function Invoke-DupFinder {
